@@ -14,7 +14,7 @@ Domain Path:    /languages
 class GTM_Custom_Data_Layer_Variables {
   function init() {
     add_action( 'rwmb_meta_boxes', array($this, 'init_meta_box'), 10 );
-    add_action( 'wp_head', array($this, 'data_layer_markup'), 10 );
+    add_action( 'wp_head', array($this, 'data_layer_markup'), 9 );
   }
 
   function init_meta_box( $meta_boxes ) {
