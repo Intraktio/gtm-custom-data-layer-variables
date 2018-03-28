@@ -57,10 +57,15 @@ class GTM_Custom_Data_Layer_Variables {
     $variables = array();
     $meta = rwmb_meta( 'gtm_data_layer_variables' );
     foreach( $meta as $key=>&$val ) {
-      if (empty($val['key'])) {
+      $k = $val['key'];
+      $v = $val['value'];
+      if (empty($v)) {
 	continue;
       }
-      $variables[$val['key']] = $val['value'];
+      if (is_numeric($v)) {
+	$v = $v + 0;
+      }
+      $variables[$k] = $v;
     }
 ?>
 <script data-cfasync="false" type="text/javascript">
