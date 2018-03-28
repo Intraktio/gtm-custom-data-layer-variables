@@ -23,7 +23,7 @@ class GTM_Custom_Data_Layer_Variables {
     $meta_boxes[] = array(
       'id' => 'gtm_data_layer_variables',
       'title' => esc_html__( 'GTM data layer', 'gtm_custom_data_layer_variables' ),
-      //'post_types' => array( 'post', 'page' ),
+      'post_types' => get_post_types( '', 'names' ),
       'context' => 'side',
       'priority' => 'default',
       'autosave' => false,
